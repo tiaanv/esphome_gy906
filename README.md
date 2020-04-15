@@ -1,7 +1,7 @@
 # Esphome_gy906
 Esphome example for the uart based GY-906 optical temperature sensor.
 
-I created this as I could not find an example anywhere.  I used other UART and sensor examples to form the esphome basics...  The implementation to read the GY-601 is very basic, and my own derivatives.  IT works reliably
+I created this as I could not find an example anywhere.  I used other UART and sensor examples to form the esphome basics...  The implementation to read the GY-906 is very basic, and my own derivatives.  IT works reliably
 
 # Installation
 

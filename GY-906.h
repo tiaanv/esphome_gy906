@@ -2,12 +2,12 @@
 
 #define SENSOR_CNT 4
 
-class Gy601 : public PollingComponent, public UARTDevice {
+class Gy906 : public PollingComponent, public UARTDevice {
  Sensor *xambient_temp {nullptr};
  Sensor *xoptical_temp {nullptr};
 
  public:
-  Gy601(UARTComponent *parent, Sensor *ambient_temp, Sensor *optical_temp) : UARTDevice(parent) , xambient_temp(ambient_temp), xoptical_temp(optical_temp) {}
+  Gy906(UARTComponent *parent, Sensor *ambient_temp, Sensor *optical_temp) : UARTDevice(parent) , xambient_temp(ambient_temp), xoptical_temp(optical_temp) {}
 
   byte cmdGetTemps[3] = {  0xA5, 0x15, 0xBA };
 

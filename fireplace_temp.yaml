@@ -1,0 +1,50 @@
+esphome:
+  name: fireplace_temp
+  platform: ESP8266
+  board: d1_mini
+  includes:
+    - GY-601.h  
+
+wifi:
+  ssid: "VILJOEN"
+  password: "wearesecure"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Fireplace Temp Fallback Hotspot"
+    password: "gh8ZQdw1KbMZ"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+uart:
+  id: uart_bus
+  tx_pin: 15
+  rx_pin: 13
+  baud_rate: 9600
+  
+sensor:
+  - platform: template
+    id: ambient_temp
+    name: "ambient_temp"
+    unit_of_measurement: "°C"
+    lambda: "return {};"
+  - platform: template
+    id: optical_temp
+    name: "optical_temp"
+    unit_of_measurement: "°C"
+    lambda: "return {};"
+    
+custom_component:
+- lambda: |-
+    auto my_Gy601 = new Gy601(id(uart_bus),id(optical_temp),id(ambient_temp));
+    App.register_component(my_Gy601);
+    return {my_Gy601};    
+ 

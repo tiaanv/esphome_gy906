@@ -3,7 +3,7 @@ esphome:
   platform: ESP8266
   board: d1_mini
   includes:
-    - GY-601.h  
+    - GY-906.h  
 
 wifi:
   ssid: "VILJOEN"
@@ -44,7 +44,7 @@ sensor:
     
 custom_component:
 - lambda: |-
-    auto my_Gy601 = new Gy601(id(uart_bus),id(optical_temp),id(ambient_temp));
-    App.register_component(my_Gy601);
-    return {my_Gy601};    
+    auto my_Gy906 = new Gy906(id(uart_bus),id(optical_temp),id(ambient_temp));
+    App.register_component(my_Gy906);
+    return {my_Gy906};    
  

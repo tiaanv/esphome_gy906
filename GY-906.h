@@ -1,7 +1,5 @@
 #include "esphome.h"
 
-#define SENSOR_CNT 4
-
 class Gy906 : public PollingComponent, public UARTDevice {
  Sensor *xambient_temp {nullptr};
  Sensor *xoptical_temp {nullptr};
